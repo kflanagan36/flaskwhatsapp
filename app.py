@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 def openai_call(prompt):
-    openai.api_key = '<API_KEY>'
+    openai.api_key = '<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>'
     prompt = (prompt.lower()).strip()
     model_engine = openai.Completion.create(
         engine='text-davinci-002',
@@ -21,8 +21,8 @@ def openai_call(prompt):
     return output
 
 def send_sms(to_number, message):
-    sms_key = '<API KEY>'
-    sms_secret = '<SECRET KEY>'
+    sms_key = '<74323e84>'
+    sms_secret = '<blSfojxpOm1b9zVk>'
     sms_api = vonage.Client(key=sms_key, secret=sms_secret)
     try:
         userData = sms_api.send_message({'from': 'Vonage APIs', 'to': str(to_number), 'text': message})
